@@ -255,6 +255,7 @@ from employee;
     select ename 이름, salary 급여
     from employee
     where salary < 2000 or salary > 3000;
+   /*  where salary not between 2000 and 3000; 대체 가능 */
 
 --6. 1981년 2월 20일부터 81년 5월 1일 사이의 입사한 사원의 이름 담당업무, 입사일을 출력하시오
     select ename 이름, job 담당업무, hiredate 입사일
@@ -271,6 +272,7 @@ from employee;
     select ename 이름, salary 급여, dno 부서번호
     from employee
     where (salary between '2000' and '3000') and (dno = 20 or dno = 30)
+ /* where (salary between 2000 and 3000) and (dno in(20,30)) 대체 가능 */
     order by ename asc;
 
 --9. 1981년도 입사한 사원의 이름과 입사일을 출력 하시오 ( like 연산자와 와일드 카드 사용 : _ , % )
@@ -293,6 +295,7 @@ from employee;
     select ename 이름
     from employee
     where instr(ename, 'R') = 3;
+    /* where ename like '__R%' 대체 가능(앞에 언더바 두 개 넣어서 R을 세번째 문자로 */
 
 --13. 이름에 A 와 E 를 모두 포함하고 있는 사원의 이름을 표시하시오.
     select ename 이름
@@ -304,7 +307,8 @@ from employee;
     select ename 이름, job 담당업무, salary 급여
     from employee
     where (job = 'CLERK' or job = 'SALESMAN') and (salary != 1600 and salary != 950 and salary != 1300);
-
+    /* where (job = 'CLERK' or job = 'SALESMAN') and salary not in (1600,950,1300) */
+    
 --15. 커미션이 $500이상인 사원의 이름과 급여 및 커미션을 출력하시오.
     select ename 이름, salary 급여, commission 커미션
     from employee
@@ -381,14 +385,4 @@ from employee;
     -- 사원 테이블에서 입사일의 마지막 날짜를 출력
     select hiredate as 입사일, last_day(hiredate)
     from employee;
-    
-    /* 형식 변환 함수
-        TO_CHAR: 날짜, 숫자형을 문자형으로 변환
-        TO_DATE: 문자형을 날짜형으로 변환
-        TO_NUMBER: 문자형을 숫자로 변환
-    */
-    
-    -- TO_CHAR(date, 'YYYYMMDD'): 날짜 형식을 'YYYYMMDD' 형식으로 뽑아와서 char 타입으로 변환
-    
-    select TO_CHAR (sysdate,'YYYYMMDD')
-    from dual;
+     

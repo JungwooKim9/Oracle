@@ -308,7 +308,7 @@ select * from Salgrade;     -- 연봉에 대한 등급이 저장됨
     select ename 사원명, salary * 12 + NVL(commission,0) as 연봉
     from employee
     where job = 'SALESMAN' and (salary * 12 + NVL(commission,0)) >= 1500 and dno = 30
-
+    order by 연봉 desc;
 
 /*
     where절에서 별칭 이름을 사용하면 오류 발생.
@@ -319,8 +319,9 @@ select * from Salgrade;     -- 연봉에 대한 등급이 저장됨
     select ename 사원명, salary 월급, dno 부서번호
     from employee
     where salary <= 1500 and dno != 20
+    order by 월급 desc;
 
 -- <문제10> 사원번호(eno) 가 7788, 7782 인 부서번호와 이름과 직책을 출력
-    select dno 부서번호, ename 이름, job 직책
-    from employee
+    select dno 부서번호, ename 이름, job 직책, eno as 사원번호
+    from employee 
     where eno = 7788 or eno = 7782
