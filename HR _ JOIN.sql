@@ -151,7 +151,7 @@ where e.dno = '20';
 /* Outer JOIN: 한쪽 테이블의 내용은 모두 출력하도록 함
     LEFT Outer JOIN: 왼쪽 테이블은 무조건 모두 출력
     RIGHT Outer JOIN: 오른쪽 테이블은 무조건 모두 출력
-    Full Outer JOIN: 
+    Full Outer JOIN: 두 테이블 모두 전체 내용을 출력
 */
 
 -- ANSI 호환의 Outer JOIN
@@ -338,5 +338,3 @@ select * from v_sasu_info;
 
 -- view의 저장된 코드 정보를 확인: 데이터 사전을 사용해서 확인
 select * from user_views;
-
-drop view v_sasu_info
