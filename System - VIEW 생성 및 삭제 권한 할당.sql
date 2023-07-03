@@ -1,0 +1,3 @@
+-- VIEW 생성 할 수 있는 권한 할당 (System 계정으로 접속 후 실행)
+GRANT CREATE ANY VIEW TO "C##HR" WITH ADMIN OPTION;
+GRANT DROP ANY VIEW TO "C#HR" WITH ADMIN OPTION;
