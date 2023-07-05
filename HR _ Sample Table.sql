@@ -19,13 +19,13 @@ drop table Orders cascade constraints;
 
 desc Members;
 
--- Members 테이블
+-- Members 테이블  (회원정보)
 CREATE TABLE Members (
-    MemberID INT PRIMARY KEY,
-    FirstName VARCHAR2(50),
-    LastName VARCHAR2(50),
-    Email VARCHAR2(100),
-    PhoneNumber VARCHAR2(20)
+    MemberID INT PRIMARY KEY,   -- 회원 아이디
+    FirstName VARCHAR2(50),     -- 이름
+    LastName VARCHAR2(50),      -- 성
+    Email VARCHAR2(100),        -- 이메일 주소
+    PhoneNumber VARCHAR2(20)    -- 휴대폰 번호
 );
 
 -- Addresses 테이블
